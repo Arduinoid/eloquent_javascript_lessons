@@ -19,7 +19,7 @@ function listToArray(list) {
 
 function prepend(value, list) {
   // add value to front of given list
-  list = {'value': value, 'rest': list}
+  list = {'value': value, 'rest': list};
   return list;
 }
 
@@ -32,6 +32,18 @@ function nth(list, index) {
     } else {
       count++;
     }
+  }
+}
+
+function nthR(list, index) {
+  // return the element at the given position
+  // recursive version
+  var node = list;
+  if (index == 0) {
+    return node.value;
+  }
+  else {
+    return nthR(node.rest, index - 1);
   }
 }
 
